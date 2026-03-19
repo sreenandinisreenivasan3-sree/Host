@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 services:
   - type: web
     name: campus-placement-predictor
@@ -10,4 +11,18 @@ services:
     startCommand: gunicorn app:app
     envVars:
       - key: PYTHON_VERSION
+=======
+services:
+  - type: web
+    name: campus-placement-predictor
+    env: python
+    buildCommand: |
+      pip install --upgrade pip
+      pip install wheel setuptools
+      pip install --only-binary :all: pandas numpy
+      pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+>>>>>>> 818b1e802bf09d312a4630a37d5901ba2008d984
         value: 3.9.0
